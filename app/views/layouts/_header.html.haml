@@ -1,0 +1,12 @@
+%header.navbar.navbar-fixed-top.navbar-default{role: :banner}
+  .container
+    .navbar-header
+      = link_to t('application'), root_path, id: 'logo', class: 'navbar-brand'
+    .collapse.navbar-collapse{role: :navigation}
+      %ul.nav.navbar-nav
+
+      %ul.nav.navbar-nav.navbar-right
+        -#- if user_signed_in?
+        -#
+        -#- else
+        -#  %li= link_to t('.sign_in')
