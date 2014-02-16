@@ -1,2 +1,45 @@
 en:
   application: Teacher's Journal
+  messages:
+    delete_question: Are yoy sure?
+  layouts:
+    header:
+      handbook: "Handbook"
+      sign_in: Sign In
+      sign_up: Sign Up
+      sign_out: Sign Out
+  groups:
+    index:
+      name: Name
+      students_number: Number of students
+      description: Description
+      add_group: Add group
+    group:
+      edit: Edit
+      delete: Delete
+    new:
+      group_creating: Group creating
+    edit:
+      group_edit: Group edit
+    messages:
+      deleted: Group %{name} was deleted
+      not_deleted: Group %{name} was not deleted
+      created: Group %{name} was created
+      updated: Group %{name} was updated
+  subjects:
+    index:
+      name: Name
+      description: Description
+      add_subject: Add subject
+    subject:
+      edit: Edit
+      delete: Delete
+    new:
+      subject_creating: Subject creating
+    edit:
+      subject_edit: Subject edit
+    messages:
+      deleted: Subject %{name} was deleted
+      not_deleted: Subject %{name} was not deleted
+      created: Subject %{name} was created
+      updated: Subject %{name} was updated

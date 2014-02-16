@@ -1,0 +1,22 @@
+= form_for(@group, html: {class: 'form-horizontal'}) do |f|
+
+  .form-group
+    .col-md-2
+      = f.label :name
+    .col-md-5
+      = f.text_field :name, class: 'form-control', autofocus: true, required: true
+
+  .form-group
+    .col-md-2
+      = f.label :students_number
+    .col-md-5
+      = f.number_field :students_number, class: 'form-control', min: 0
+
+  .form-group
+    .col-md-2
+      = f.label :description
+    .col-md-5
+      = f.text_area :description, class: 'form-control', rows: 7
+
+  .col-md-offset-2
+    = f.submit class: 'btn btn-primary'

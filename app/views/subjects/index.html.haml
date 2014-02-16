@@ -1,0 +1,12 @@
+= render 'shared/navbar', active: 'subjects'
+
+%table.table.table-striped
+  %thead
+    %tr
+      %th= t('.name')
+      %th= t('.description')
+      %th= t('.actions')
+  %tbody
+    = render @subjects
+= link_to t('.add_subject'), new_subject_path, class: 'btn btn-primary'
+= will_paginate @subjects, renderer: BootstrapPagination::Rails

@@ -1,0 +1,8 @@
+%tr
+  %td= group.name
+  %td= group.students_number
+  %td= group.description
+  %td
+    = link_to t('.edit'), edit_group_path(group), class: 'btn btn-sm btn-warning'
+    = link_to t('.delete'), group_path(group), data: { confirm: t('messages.delete_question') },
+                method: :delete, class: 'btn btn-sm btn-danger'
