@@ -23,6 +23,9 @@ gem 'turbolinks'
 
 gem 'jbuilder', '~> 1.2'
 
+#Authentication
+gem 'devise'
+
 group :development do
   gem 'better_errors'
   gem 'quiet_assets'
