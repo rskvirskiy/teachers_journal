@@ -26,6 +26,8 @@ gem 'jbuilder', '~> 1.2'
 #Authentication
 gem 'devise'
 
+gem 'heroku', require: false
+
 group :development do
   gem 'better_errors'
   gem 'quiet_assets'

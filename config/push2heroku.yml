@@ -1,0 +1,26 @@
+common:
+  config:
+    rack_env: staging
+    rails_env: staging
+    log_level: staging
+  pre_config_commands:
+    - bundle exec heroku create <%=ENV['HEROKU_APP_NAME']%> --stack cedar --remote h<%=ENV['BRANCH_NAME']%>
+    - git push h<%=ENV['BRANCH_NAME']%> <%=ENV['BRANCH_NAME']%>:master -f
+  post_config_commands:
+    after_every_install:
+      - bundle exec heroku run rake db:migrate --app <%=ENV['HEROKU_APP_NAME']%> --trace
+    soft:
+      - bundle exec heroku run rake db:migrate --app <%=ENV['HEROKU_APP_NAME']%> --trace
+    hard:
+      - bundle exec heroku pg:reset SHARED_DATABASE_URL --app <%=ENV['HEROKU_APP_NAME']%> --confirm <%=ENV['HEROKU_APP_NAME']%> --trace
+      - bundle exec heroku run rake db:migrate --app <%=ENV['HEROKU_APP_NAME']%> --trace
+
+master:
+  config:
+    rack_env: production
+    rails_env: production
+    log_level: production
+
+test:
+
+development:
