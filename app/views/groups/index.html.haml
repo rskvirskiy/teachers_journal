@@ -1,0 +1,13 @@
+= render 'shared/navbar', active: 'groups'
+
+%table.table.table-striped
+  %thead
+    %tr
+      %th= t('.name')
+      %th= t('.students_number')
+      %th= t('.description')
+      %th= t('.actions')
+  %tbody
+    = render @groups
+= link_to t('.add_group'), new_group_path, class: 'btn btn-primary'
+= will_paginate @groups, renderer: BootstrapPagination::Rails

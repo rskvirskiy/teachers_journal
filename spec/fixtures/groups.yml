@@ -1,0 +1,5 @@
+sp_group:
+  name: 'SP'
+  students_number: 16
+  description: 'good guys'
+  user: teacher

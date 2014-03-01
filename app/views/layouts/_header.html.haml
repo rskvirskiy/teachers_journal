@@ -3,9 +3,11 @@
     .navbar-header
       = link_to t('application'), root_path, id: 'logo', class: 'navbar-brand'
     .collapse.navbar-collapse{role: :navigation}
-      %ul.nav.navbar-nav
-
       %ul.nav.navbar-nav.navbar-right
+        %li
+          = link_to t('.handbook'), groups_path
+        %li.divider-vertical
+
         - if user_signed_in?
           %li= link_to t('.sign_out'), destroy_user_session_path, method: :delete
         - else
