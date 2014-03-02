@@ -1,11 +1,12 @@
 %header.navbar.navbar-fixed-top.navbar-default{role: :banner}
   .container
     .navbar-header
-      = link_to t('application'), root_path, id: 'logo', class: 'navbar-brand'
+      %ul.nav.navbar-nav.navbar-left
+        %li= link_to t('application'), root_path, id: 'logo', class: 'navbar-brand'
+        %li= link_to t('.schedule'), schedules_path
     .collapse.navbar-collapse{role: :navigation}
       %ul.nav.navbar-nav.navbar-right
-        %li
-          = link_to t('.handbook'), groups_path
+        %li= link_to t('.handbook'), groups_path
         %li.divider-vertical
 
         - if user_signed_in?

@@ -1,0 +1,4 @@
+%ul.nav.nav-tabs
+  %li{ class: active == 'list_mode' && :active }= link_to t('.list_mode'), schedules_path
+  -if schedules_not_empty?
+    %li{ class: active == 'table_mode' && :active }= link_to t('.table_mode'), schedules_table_mode_path(first_type_of_week)

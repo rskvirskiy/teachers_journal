@@ -1,13 +1,26 @@
 en:
   application: Teacher's Journal
+  day_of_week:
+    _1: Mon
+    _2: Tue
+    _3: Wed
+    _4: Thu
+    _5: Fri
+    _6: Sat
+    _7: Sun
   messages:
-    delete_question: Are yoy sure?
+    delete_question: Are you sure?
   layouts:
     header:
       handbook: "Handbook"
       sign_in: Sign In
       sign_up: Sign Up
       sign_out: Sign Out
+  shared:
+    navbar:
+      subjects: Subjects
+      groups: Groups
+      lecture_rooms: Lecture rooms
   groups:
     index:
       name: Name
@@ -43,3 +56,31 @@ en:
       not_deleted: Subject %{name} was not deleted
       created: Subject %{name} was created
       updated: Subject %{name} was updated
+  lecture_rooms:
+    index:
+      name: Name
+      capacity: Capacity
+      description: Description
+      add_lecture_room: Add lecture room
+    lecture_room:
+      edit: Edit
+      delete: Delete
+    new:
+      lecture_room_creating: Lecture room creating
+    edit:
+      lecture_room_edit: Lecture room edit
+    messages:
+      deleted: Lecture room %{name} was deleted
+      not_deleted: Lecture room %{name} was not deleted
+      created: Lecture room %{name} was created
+      updated: Lecture room %{name} was updated
+
+  schedules:
+    messages:
+      created: Schedule successfully created.
+      updated: Schedule successfully updated.
+      deleted: Schedule successfully deleted.
+      not_deleted: Schedule not deleted.
+    navbar:
+      list_mode: List mode
+      table_mode: Table mode

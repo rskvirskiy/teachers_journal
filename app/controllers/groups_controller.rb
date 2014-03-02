@@ -1,7 +1,4 @@
 class GroupsController < ApplicationController
-
-  before_filter :store_request_url, only: :destroy
-
   def index
     @groups = current_user.groups.paginate(page: @current_page, per_page: Group::PER_PAGE)
   end
@@ -50,9 +47,5 @@ class GroupsController < ApplicationController
 
   def group_params
     params.require(:group).permit(:name, :students_number, :description)
-  end
-
-  def store_request_url
-    session[:return_to] = request.referer
   end
 end

@@ -1,0 +1,8 @@
+%tr
+  %td= schedule.number
+  %td= get_name(schedule.subject)
+  %td= get_name(schedule.group)
+  %td= get_name(schedule.lecture_room)
+  %td
+    = link_to t('.edit'), edit_schedule_path(schedule), class: 'btn btn-sm btn-warning'
+    = link_to t('.delete'), schedule_path(schedule), method: :delete, class: 'btn btn-sm btn-danger'

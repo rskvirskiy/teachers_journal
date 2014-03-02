@@ -1,0 +1,4 @@
+%tr
+  %td= normalized_day(day_of_week)
+  =render partial: 'schedules/table_mode/schedule',
+  collection: table_mode_schedules(@schedules, day_of_week, @schedules_numbers)
