@@ -1,0 +1,19 @@
+- schedules = schedule_for(@schedules, type_of_week, day_of_week)
+- first_schedule = schedules.first
+
+%tr
+  %td{rowspan: schedules.count}
+    %h4= normalized_day(day_of_week)
+  - if first_schedule
+
+    %td= first_schedule.number
+    %td= get_name(first_schedule.subject)
+    %td= get_name(first_schedule.group)
+    %td= get_name(first_schedule.lecture_room)
+
+    %td
+      = link_to t('.edit'), edit_schedule_path(first_schedule), class: 'btn btn-sm btn-warning'
+      = link_to t('.delete'), schedule_path(first_schedule), data: { confirm: t('messages.delete_question') },
+                  method: :delete, class: 'btn btn-sm btn-danger'
+
+= render partial: 'schedule', collection: schedules.drop(1)

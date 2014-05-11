@@ -1,0 +1,6 @@
+%td.schedule-cell
+  = schedule[:text]
+  - if schedule[:id]
+    .action-panel
+      = link_to '', edit_schedule_path(schedule[:id]), class: 'glyphicon glyphicon-pencil'
+      = link_to '', schedule_path(schedule[:id]), method: :delete, class: 'glyphicon glyphicon-remove'

@@ -9,6 +9,7 @@ common:
   post_config_commands:
     after_every_install:
       - bundle exec heroku run rake db:migrate --app <%=ENV['HEROKU_APP_NAME']%> --trace
+      - bundle exec heroku run rake db:seed --app <%=ENV['HEROKU_APP_NAME']%> --trace
     soft:
       - bundle exec heroku run rake db:migrate --app <%=ENV['HEROKU_APP_NAME']%> --trace
     hard:

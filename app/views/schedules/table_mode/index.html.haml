@@ -1,0 +1,13 @@
+= render 'navbar', active: 'table_mode'
+= render 'schedules/table_mode/types_of_week_navbar'
+
+%table.table.table-bordered
+  %thead
+    %tr
+      %td
+      - @schedules_numbers.each do |number|
+        %td= number
+  %tbody
+    =render partial: 'schedules/table_mode/day_of_week', collection: @days_of_week
+
+= link_to t('.add_schedule'), new_schedule_path, class: 'btn btn-primary'

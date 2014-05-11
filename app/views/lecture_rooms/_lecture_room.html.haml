@@ -1,0 +1,8 @@
+%tr
+  %td= lecture_room.name
+  %td= lecture_room.capacity
+  %td= lecture_room.description
+  %td
+    = link_to t('.edit'), edit_lecture_room_path(lecture_room), class: 'btn btn-sm btn-warning'
+    = link_to t('.delete'), lecture_room_path(lecture_room), data: { confirm: t('messages.delete_question') },
+                method: :delete, class: 'btn btn-sm btn-danger'

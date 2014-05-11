@@ -1,0 +1,41 @@
+= form_for(@schedule, html: {class: 'form-horizontal'}) do |f|
+
+  .form-group
+    .col-md-2
+      = f.label :type_of_week
+    .col-md-5
+      = f.text_field :type_of_week, class: 'form-control', autofocus: true, required: true
+
+  .form-group
+    .col-md-2
+      = f.label :day_of_week
+    .col-md-5
+      = f.number_field :day_of_week, class: 'form-control', required: true
+
+  .form-group
+    .col-md-2
+      = f.label :number
+    .col-md-5
+      = f.number_field :number, class: 'form-control', required: true
+
+  .form-group
+    .col-md-2
+      = f.label :subject_name
+    .col-md-5
+      = f.text_field :subject_name, value: get_name(@schedule.subject), class: 'form-control'
+
+  .form-group
+    .col-md-2
+      = f.label :group_name
+    .col-md-5
+      = f.text_field :group_name, value: get_name(@schedule.group) ,class: 'form-control'
+
+
+  .form-group
+    .col-md-2
+      = f.label :lecture_room_name
+    .col-md-5
+      = f.text_field :lecture_room_name, value: get_name(@schedule.lecture_room), class: 'form-control'
+
+  .col-md-offset-2
+    = f.submit class: 'btn btn-primary'

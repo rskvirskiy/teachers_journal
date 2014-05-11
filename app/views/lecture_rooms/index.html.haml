@@ -1,0 +1,13 @@
+= render 'shared/navbar', active: 'lecture_rooms'
+
+%table.table.table-striped
+  %thead
+    %tr
+      %th= t('.name')
+      %th= t('.capacity')
+      %th= t('.description')
+      %th= t('.actions')
+  %tbody
+    = render @lecture_rooms
+= link_to t('.add_lecture_room'), new_lecture_room_path, class: 'btn btn-primary'
+= will_paginate @lecture_rooms, renderer: BootstrapPagination::Rails

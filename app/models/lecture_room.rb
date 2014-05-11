@@ -1,4 +1,4 @@
-class Group < ActiveRecord::Base
+class LectureRoom < ActiveRecord::Base
   PER_PAGE = 10
 
   belongs_to :user

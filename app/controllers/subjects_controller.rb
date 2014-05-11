@@ -1,7 +1,5 @@
 class SubjectsController < ApplicationController
 
-  before_filter :store_request_url, only: :destroy
-
   def index
     @subjects = current_user.subjects.paginate(page: @current_page, per_page: Subject::PER_PAGE)
   end
@@ -50,9 +48,5 @@ class SubjectsController < ApplicationController
 
   def subject_params
     params.require(:subject).permit(:name, :description)
-  end
-
-  def store_request_url
-    session[:return_to] = request.referer
   end
 end
