@@ -10,4 +10,6 @@
   %tbody
     = render @groups
 = link_to t('.add_group'), new_group_path, class: 'btn btn-primary'
-= will_paginate @groups, renderer: BootstrapPagination::Rails
+%br
+
+= paginate @groups

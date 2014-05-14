@@ -10,4 +10,6 @@
   %tbody
     = render @lecture_rooms
 = link_to t('.add_lecture_room'), new_lecture_room_path, class: 'btn btn-primary'
-= will_paginate @lecture_rooms, renderer: BootstrapPagination::Rails
+%br
+
+=paginate @lecture_rooms

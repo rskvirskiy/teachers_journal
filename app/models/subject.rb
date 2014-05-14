@@ -1,5 +1,5 @@
 class Subject < ActiveRecord::Base
-  PER_PAGE = 10
+  paginates_per 10
 
   belongs_to :user
   has_many :schedules

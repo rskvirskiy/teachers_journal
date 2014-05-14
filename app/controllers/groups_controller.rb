@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
   def index
-    @groups = current_user.groups.paginate(page: @current_page, per_page: Group::PER_PAGE)
+    @groups = current_user.groups.page params[:page]
   end
 
   def new

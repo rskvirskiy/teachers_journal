@@ -1,8 +1,8 @@
 user = User.create(email: 'test@example.com', password: 'qweqweqwe', password_confirmation: 'qweqweqwe')
 
-(1..5).each { |x| user.subjects.create(name: "SPO#{x}") }
-(1..5).each { |x| user.groups.create(name: "SP#{x}") }
-(30..35).each { |x| user.lecture_rooms.create(name: "3.#{x}") }
+(1..12).each { |x| user.subjects.create(name: "SPO#{x}") }
+(1..12).each { |x| user.groups.create(name: "SP#{x}") }
+(30..42).each { |x| user.lecture_rooms.create(name: "3.#{x}") }
 
 (1..5).each do |day_of_week|
   (1..5).each do |number|

@@ -15,8 +15,8 @@ gem 'bootstrap-datepicker-rails', require: 'bootstrap-datepicker-rails',
 gem 'select2-rails'
 
 #pagination
-gem 'will_paginate'
-gem 'will_paginate-bootstrap'
+gem 'kaminari'
+gem 'kaminari-bootstrap'
 
 gem 'jquery-rails'
 

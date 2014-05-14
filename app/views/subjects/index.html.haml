@@ -9,4 +9,7 @@
   %tbody
     = render @subjects
 = link_to t('.add_subject'), new_subject_path, class: 'btn btn-primary'
-= will_paginate @subjects, renderer: BootstrapPagination::Rails
+
+%br
+
+=paginate @subjects

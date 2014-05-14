@@ -1,7 +1,7 @@
 class SubjectsController < ApplicationController
 
   def index
-    @subjects = current_user.subjects.paginate(page: @current_page, per_page: Subject::PER_PAGE)
+    @subjects = current_user.subjects.page params[:page]
   end
 
   def new

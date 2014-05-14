@@ -1,20 +1,12 @@
 class SchedulesController < ApplicationController
   before_action :store_request_url, only: [:edit, :destroy]
+  before_action :prepare_for_index, only: [:index, :table_mode]
 
   def index
-    @schedules    = current_user.schedules.paginate(page: @current_page, per_page: Schedule::PER_PAGE)
-    @week_types   = Schedule.get_uniq_values_of(:type_of_week, current_user)
-    @days_of_week = (1..7).to_a
   end
 
   def table_mode
-    @week_types   = Schedule.get_uniq_values_of(:type_of_week, current_user)
-    @current_type = params[:type_of_week]
-
-    @schedules = current_user.schedules.where(type_of_week: @current_type)
-
     @schedules_numbers = (1..Schedule.get_max_value_of_number).to_a
-    @days_of_week = (1..7).to_a
 
     render 'schedules/table_mode/index'
   end
@@ -91,5 +83,12 @@ class SchedulesController < ApplicationController
   def schedules_params
     params.require(:schedule).permit(:type_of_week, :day_of_week, :number, :subject_name,
                                      :lecture_room_name, :group_name)
+  end
+
+  def prepare_for_index
+    @week_types   = Schedule.get_uniq_values_of(:type_of_week, current_user)
+    @current_type = params[:type_of_week] || @week_types.last
+    @schedules    = current_user.schedules.where(type_of_week: @current_type)
+    @days_of_week = (1..7).to_a
   end
 end

@@ -1,7 +1,7 @@
 class LectureRoomsController < ApplicationController
 
   def index
-    @lecture_rooms = current_user.lecture_rooms.paginate(page: @current_page, per_page: LectureRoom::PER_PAGE)
+    @lecture_rooms = current_user.lecture_rooms.page params[:page]
   end
 
   def new
