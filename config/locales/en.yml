@@ -1,13 +1,13 @@
 en:
   application: Teacher's Journal
   day_of_week:
+    _0: Sun
     _1: Mon
     _2: Tue
     _3: Wed
     _4: Thu
     _5: Fri
     _6: Sat
-    _7: Sun
   messages:
     delete_question: Are you sure?
   layouts:
@@ -16,6 +16,8 @@ en:
       sign_in: Sign In
       sign_up: Sign Up
       sign_out: Sign Out
+      schedule: Schedule
+      timesheet: Timesheet
   shared:
     navbar:
       subjects: Subjects
@@ -76,6 +78,20 @@ en:
       updated: Lecture room %{name} was updated
 
   schedules:
+    index:
+      day_of_week: Day of week
+      lecture_number: Lecture number
+      subject: Subject
+      group: Group
+      lecture_room: Lecture room
+      add_schedule: Add schedule
+    edit:
+      schedule_editing: Schedule editing
+    new:
+      schedule_creating: Schedule creating
+    table_mode:
+      index:
+        add_schedule: Add schedule
     messages:
       created: Schedule successfully created.
       updated: Schedule successfully updated.
@@ -84,3 +100,64 @@ en:
     navbar:
       list_mode: List mode
       table_mode: Table mode
+  timesheets:
+    index:
+      auto_generate: Auto generate timesheets from schedules
+      date: Date
+      group: Group
+      subject: Subject
+      theme: Theme
+      type_of_work: Type of work
+      hours: Hours
+      actions: Actions
+      add_timesheet: Add timesheet
+    edit:
+      timesheet_editing: Timesheet editing
+    new:
+      timesheet_creating: Timesheet creating
+    timesheet:
+      edit: Edit
+      delete: Delete
+    auto_generation_settings:
+      timesheets_settings_title: Please fill information for timesheets autogeneration
+      academic_hours_pro_lecture: Academic hours in 1 lecture
+      minutes_number_pro_academic_hour: Minutes number in academic hour
+      start_date: Start date
+      finish_date: Finish date
+      default_type: Default type of work
+      delete_another: Delete all old records?
+      current_week_type: Start week type
+    messages:
+      updated: "Timesheet updated with theme: %{theme}"
+      deleted: "Timesheet was successfully deleted with theme: %{theme}"
+      not_deleted: "Timesheet deletion was failed. Try again."
+  timesheet:
+    messages:
+      created: "Timesheet was successfully created."
+  helpers:
+    label:
+      group:
+        name: Name
+        students_number: Students number
+        description: Description
+      subject:
+        name: Name
+        description: Description
+      lecture_room:
+        name: Name
+        capacity: Capacity
+        description: Description
+      schedule:
+        type_of_week: Type of week
+        day_of_week: Day of week
+        number: Number
+        subject_name: Subject name
+        group_name: Group name
+        lecture_room_name: Lecture room name
+      timesheet:
+        date: Date
+        group: Group
+        subject: Subject
+        theme: Theme
+        type_of_work: Type of work
+        hours: Hours

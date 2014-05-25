@@ -1,0 +1,19 @@
+%table.table.table-striped
+  %thead
+    %tr
+      %th= t('.date')
+      %th= t('.group')
+      %th= t('.subject')
+      %th= t('.theme')
+      %th= t('.type_of_work')
+      %th= t('.hours')
+      %th= t('.actions')
+  %tbody
+    = render @timesheets
+
+= link_to t('.add_timesheet'), new_timesheet_path, class: 'btn btn-primary'
+= link_to t('.auto_generate'), auto_generation_settings_timesheets_path,
+  class: 'btn btn-warning auto-generate'
+%br
+
+= paginate @timesheets

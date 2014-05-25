@@ -1,0 +1,41 @@
+= form_for(@timesheet, html: {class: 'form-horizontal'}) do |f|
+
+  .form-group
+    .col-md-2
+      = f.label :date
+    .col-md-5
+      = f.text_field :date, value: custom_date_format(@timesheet.date), class: 'form-control',
+      data: { behaviour: 'datepicker' }, required: true
+
+  .form-group
+    .col-md-2
+      = f.label :group
+    .col-md-5
+      = f.text_field :group, class: 'form-control'
+
+  .form-group
+    .col-md-2
+      = f.label :subject
+    .col-md-5
+      = f.text_field :subject, class: 'form-control'
+
+  .form-group
+    .col-md-2
+      = f.label :theme
+    .col-md-5
+      = f.text_field :theme, class: 'form-control'
+
+  .form-group
+    .col-md-2
+      = f.label :type_of_work
+    .col-md-5
+      = f.text_field :type_of_work, class: 'form-control'
+
+  .form-group
+    .col-md-2
+      = f.label :hours
+    .col-md-5
+      = f.text_field :hours, class: 'form-control'
+
+  .col-md-offset-2
+    = f.submit class: 'btn btn-primary'

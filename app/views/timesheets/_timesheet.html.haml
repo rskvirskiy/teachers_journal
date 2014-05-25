@@ -1,0 +1,11 @@
+%tr
+  %td= custom_date_format timesheet.date
+  %td= timesheet.group
+  %td= timesheet.subject
+  %td= timesheet.theme
+  %td= timesheet.type_of_work
+  %td= timesheet.hours
+  %td
+    = link_to t('.edit'), edit_timesheet_path(timesheet), class: 'btn btn-sm btn-warning'
+    = link_to t('.delete'), timesheet_path(timesheet), data: { confirm: t('messages.delete_question') },
+                method: :delete, class: 'btn btn-sm btn-danger'

@@ -89,6 +89,6 @@ class SchedulesController < ApplicationController
     @week_types   = Schedule.get_uniq_values_of(:type_of_week, current_user)
     @current_type = params[:type_of_week] || @week_types.last
     @schedules    = current_user.schedules.where(type_of_week: @current_type)
-    @days_of_week = (1..7).to_a
+    @days_of_week = (0..6).to_a
   end
 end

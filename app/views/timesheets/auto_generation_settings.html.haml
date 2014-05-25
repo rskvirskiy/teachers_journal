@@ -1,0 +1,45 @@
+%h2= t('.timesheets_settings_title')
+
+= form_tag(auto_generate_timesheets_path, method: :get, class: 'form-horizontal') do
+  .form-group
+    .col-md-3
+      = label_tag :academic_hours_pro_lecture, t('.academic_hours_pro_lecture')
+    .col-md-5
+      = number_field_tag :academic_hours_pro_lecture, 2, class: 'form-control'
+  .form-group
+    .col-md-3
+      = label_tag :minutes_number_pro_academic_hour, t('.minutes_number_pro_academic_hour')
+    .col-md-5
+      = number_field_tag :minutes_number_pro_academic_hour, 45, class: 'form-control'
+
+  .form-group
+    .col-md-3
+      = label_tag :start_date, t('.start_date')
+    .col-md-5
+      = text_field_tag :start_date, start_date_default, class: 'form-control', data: { behaviour: 'datepicker' }
+
+  .form-group
+    .col-md-3
+      = label_tag :finish_date, t('.finish_date')
+    .col-md-5
+      = text_field_tag :finish_date, finish_date_default, class: 'form-control', data: { behaviour: 'datepicker' }
+
+  .form-group
+    .col-md-3
+      = label_tag :default_type, t('.default_type')
+    .col-md-5
+      = text_field_tag :default_type, nil, class: 'form-control'
+
+  .form-group
+    .col-md-3
+      = label_tag :current_week_type, t('.current_week_type')
+    .col-md-5
+      = text_field_tag :current_week_type, nil, class: 'form-control'
+
+  .form-group
+    .col-md-3
+      = label_tag :delete_another, t('.delete_another')
+    .col-md-5
+      = check_box_tag :delete_another, true
+
+  = submit_tag 'Auto generate', class: 'btn btn-primary'
